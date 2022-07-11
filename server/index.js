@@ -5,6 +5,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 
 import userRouter from './routes/user.js'
+import bdayRouter from './routes/bday.js'
 
 dotenv.config();
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(cors())
 
 app.use('/user', userRouter)
+app.use('/bday', bdayRouter)
 
 app.get('/', (req, res) => {
     res.send("API Working!")

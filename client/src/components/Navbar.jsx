@@ -41,7 +41,7 @@ const Navbar = () => {
         {user?.result.email ? (
           <>
           <div className='flex items-center'>
-            <p className='mr-4 font-bold'>Logged in as: {user?.result.name}</p>
+            <p className='hidden md:block mr-4'>Logged in as: <span className='font-bold'> {user?.result.name}</span></p>
             <button onClick={handleLogout} className='bg-indigo-600 px-6 py-2 rounded cursor-pointer text-white'>Logout</button>
           </div>
           </>
