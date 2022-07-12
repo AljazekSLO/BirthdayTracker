@@ -30,7 +30,7 @@ const Navbar = () => {
     
 
   return (
-    <div className='absolute flex items-center justify-between p-4 z-[100] w-full'>
+    <div className='flex items-center justify-between p-4 z-[100] w-full'>
     <Link to='/'>
     <div className='flex'>
         <h1 className='text-indigo-600 text-4xl font-bold cursor-pointer'><span className='text-sky-600'>Birthday</span>Tracker</h1>
