@@ -3,6 +3,8 @@ import { Link, useNavigate, useLocation} from 'react-router-dom'
 import { FaBirthdayCake } from 'react-icons/fa'
 import decode from 'jwt-decode'
 
+import Modal from './Modal'
+
 
 const Navbar = () => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
@@ -27,6 +29,8 @@ const Navbar = () => {
       navigate('/')
       setUser(null)
     }
+
+    const [isOpen, setIsOpen] = useState(false)
     
 
   return (
@@ -41,7 +45,9 @@ const Navbar = () => {
         {user?.result.email ? (
           <>
           <div className='flex items-center'>
+          
             <p className='hidden md:block mr-4'>Logged in as: <span className='font-bold'> {user?.result.name}</span></p>
+            <button onClick={() => setIsOpen(true)} className='bg-indigo-600 px-6 py-2 rounded cursor-pointer text-white mr-3' >Add New</button>
             <button onClick={handleLogout} className='bg-indigo-600 px-6 py-2 rounded cursor-pointer text-white'>Logout</button>
           </div>
           </>
@@ -56,6 +62,7 @@ const Navbar = () => {
           </>
         )}
         </div>
+        {isOpen && <Modal setIsOpen={setIsOpen} />}
     </div>
   )
 }

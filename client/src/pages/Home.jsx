@@ -11,9 +11,6 @@ const Home = () => {
     getBday().then(bdays => setBdays(bdays))
   }, [])
 
-  useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem('profile')))
-  }, [user])
   
   return (
     <>
