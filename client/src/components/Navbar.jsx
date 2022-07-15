@@ -34,6 +34,7 @@ const Navbar = () => {
     
 
   return (
+    <>{isOpen && <Modal setIsOpen={setIsOpen} />}
     <div className='flex items-center justify-between p-4 z-[100] w-full'>
     <Link to='/'>
     <div className='flex'>
@@ -62,8 +63,8 @@ const Navbar = () => {
           </>
         )}
         </div>
-        {isOpen && <Modal setIsOpen={setIsOpen} />}
     </div>
+    </>
   )
 }
 
